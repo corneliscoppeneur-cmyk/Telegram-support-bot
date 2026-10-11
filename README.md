@@ -4,6 +4,10 @@
 
 ## Deutsch
 
+### Kaufen und Support
+
+**Einmaliger Kaufpreis: 2,50 €.** Für den Kauf und Fragen schreibe an [@GruppennetzwerkKontakt_bot](https://t.me/GruppennetzwerkKontakt_bot). Zahlung und Übergabe werden persönlich vereinbart. Echte Menschen antworten, sobald sie Zeit haben.
+
 Ein Telegram-Support-Bot, der direkt auf **Telegram Serverless** läuft. Nutzer schreiben dem Bot privat. Für jeden Kontakt erstellt er ein eigenes Thema in einer privaten Support-Gruppe. Mitarbeiter antworten dort und der Bot übermittelt die Antwort zurück in den privaten Chat.
 
 ### Funktionen
@@ -90,6 +94,10 @@ Eine Anleitung für ein gemeinsames ChatGPT-Work-Projekt, getrennte Bot-Projekte
 Die Portierung basiert auf [moeacgx/Telegram-SuperGM](https://github.com/moeacgx/Telegram-SuperGM). Im geprüften Stand des Ausgangsrepositorys war keine Lizenzdatei vorhanden. Dieses Paket vergibt deshalb keine zusätzliche Lizenz für den abgeleiteten Code. Die Rechte zur öffentlichen oder kostenpflichtigen Weitergabe müssen mit dem ursprünglichen Rechteinhaber geklärt sein.
 
 ## English
+
+### Purchase and support
+
+**One-time purchase price: €2.50.** To purchase or ask questions, message [@GruppennetzwerkKontakt_bot](https://t.me/GruppennetzwerkKontakt_bot). Payment and delivery are arranged personally. Real people will reply when they have time.
 
 A Telegram support bot running directly on **Telegram Serverless**. Users message the bot privately. The bot creates a separate topic for each contact in a private support group. Staff reply in that topic, and the bot delivers the reply to the contact's private chat.
 
