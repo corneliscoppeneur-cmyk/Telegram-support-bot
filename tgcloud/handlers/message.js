@@ -31,7 +31,15 @@ async function handlePrivateMessage(msg, env, ctx) {
   const userId = msg.chat.id;
   const key = `user:${userId}`;
 
+  const start = msg.text?.trim().match(/^\/start(?:@\w+)?(?:\s+(\S+))?$/i);
+  if (start?.[1] === 'buy_support_250') {
+    await env.TOPIC_MAP.put(`purchase:${userId}`, '1', { expirationTtl: 900 });
+  }
   if (!(await handleVerificationMessage(msg, env))) return;
+  if (await env.TOPIC_MAP.get(`purchase:${userId}`)) {
+    await sendPurchaseRequest(msg, env);
+    return;
+  }
 
   if (msg.text && /^\/start(?:@\w+)?(?:\s|$)/i.test(msg.text.trim())) {
     await api.sendMessage({ chat_id: userId, text: "Bitte stelle einfach deine Anfrage. Hier antworten echte Menschen, sobald wir Zeit haben." });
@@ -140,6 +148,7 @@ async function handleVerificationMessage(msg, env) {
       chat_id: userId,
       text: "✅ Bestätigt. Bitte stelle einfach deine Anfrage. Hier antworten echte Menschen, sobald wir Zeit haben.",
     });
+    if (await env.TOPIC_MAP.get(`purchase:${userId}`)) await sendPurchaseRequest(msg, env);
     console.log("verified-set", { uid: userId });
     return false;
   }
@@ -193,4 +202,20 @@ async function sendChallenge(userId, challenge, env) {
 async function findUserByThread(threadId, env) {
   const uid = await env.TOPIC_MAP.get(`thread:${threadId}`);
   return uid ? Number(uid) : null;
+}
+
+async function sendPurchaseRequest(msg, env) {
+  const uid = msg.chat.id;
+  const key = `user:${uid}`;
+  let rec = await env.TOPIC_MAP.get(key, { type: 'json' });
+  if (rec?.closed) {
+    await api.sendMessage({chat_id: uid, text: 'Dein Support-Thema ist geschlossen. Bitte warte, bis es wieder geöffnet wird.'});
+    await env.TOPIC_MAP.delete(`purchase:${uid}`);
+    return;
+  }
+  if (!rec) rec = await createAndStoreTopic(msg.from, key, env);
+  await api.sendMessage({chat_id: env.SUPERGROUP_ID, message_thread_id: rec.thread_id,
+    text: `Kaufanfrage: Telegram Support-Bot für einmalig 2,50 €.\nKontakt-ID: ${uid}`});
+  await env.TOPIC_MAP.delete(`purchase:${uid}`);
+  await api.sendMessage({chat_id: uid, text: 'Deine Kaufanfrage für den Support-Bot (einmalig 2,50 €) ist angekommen. Hier antworten echte Menschen, sobald wir Zeit haben.'});
 }
