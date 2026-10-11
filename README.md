@@ -6,7 +6,7 @@
 
 ### Kaufen und Support
 
-**Einmaliger Kaufpreis: 2,50 €.** Für den Kauf und Fragen schreibe an [@GruppennetzwerkKontakt_bot](https://t.me/GruppennetzwerkKontakt_bot). Zahlung und Übergabe werden persönlich vereinbart. Echte Menschen antworten, sobald sie Zeit haben.
+**Einmaliger Kaufpreis: 2,50 €.** Für den Kauf nutze [Kaufanfrage starten](https://t.me/GruppennetzwerkKontakt_bot?start=buy_support_250). Fragen: [Support](https://t.me/GruppennetzwerkKontakt_bot). Zahlung und Übergabe werden persönlich vereinbart. Echte Menschen antworten, sobald sie Zeit haben.
 
 Ein Telegram-Support-Bot, der direkt auf **Telegram Serverless** läuft. Nutzer schreiben dem Bot privat. Für jeden Kontakt erstellt er ein eigenes Thema in einer privaten Support-Gruppe. Mitarbeiter antworten dort und der Bot übermittelt die Antwort zurück in den privaten Chat.
 
@@ -97,7 +97,7 @@ Die Portierung basiert auf [moeacgx/Telegram-SuperGM](https://github.com/moeacgx
 
 ### Purchase and support
 
-**One-time purchase price: €2.50.** To purchase or ask questions, message [@GruppennetzwerkKontakt_bot](https://t.me/GruppennetzwerkKontakt_bot). Payment and delivery are arranged personally. Real people will reply when they have time.
+**One-time purchase price: €2.50.** To purchase, use [Start purchase request](https://t.me/GruppennetzwerkKontakt_bot?start=buy_support_250). Questions: [Support](https://t.me/GruppennetzwerkKontakt_bot). Payment and delivery are arranged personally. Real people will reply when they have time.
 
 A Telegram support bot running directly on **Telegram Serverless**. Users message the bot privately. The bot creates a separate topic for each contact in a private support group. Staff reply in that topic, and the bot delivers the reply to the contact's private chat.
 
