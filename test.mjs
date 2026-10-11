@@ -19,5 +19,14 @@ await handler({...group,forum_topic_reopened:{}});assert.equal(JSON.parse(rows.g
 const before=calls.length;await handler({...group,from:{id:9,is_bot:true}});await handler({...group,chat:{id:-2,type:'supergroup'}});assert.equal(calls.length,before);
 await handler({...pm,text:undefined,photo:[{file_id:'a'}],media_group_id:'album'});assert.equal(calls.at(-1).method,'forwardMessage');
 rows.set('challenge:99',{key:'challenge:99',value:'{}',expiresAt:1});await handler({...pm,chat:{id:99,type:'private'},from:{id:99}});assert.ok(JSON.parse(rows.get('challenge:99').value).question);
+await handler({...pm,text:'/start buy_support_250'});
+assert.ok(calls.some(c=>c.chat_id===-1004419193420 && c.text?.startsWith('Kaufanfrage:')));
+assert.equal(rows.has('purchase:42'),false);
+const newcomer={...pm,chat:{id:123,type:'private'},from:{id:123,first_name:'Buyer'},text:'/start buy_support_250'};
+await handler(newcomer);assert.equal(rows.get('purchase:123').value,'1');
+const purchaseAnswer=JSON.parse(rows.get('challenge:123').value).answer;
+await handler({...newcomer,text:String(purchaseAnswer)});
+assert.equal(rows.has('purchase:123'),false);
+assert.ok(calls.some(c=>c.chat_id===123 && c.text?.startsWith('Deine Kaufanfrage')));
 fail=true;await assert.rejects(()=>handler({...pm,text:'Error'}));
 console.log('PASS: SDK-Routing, Datenbank-Adapter, Verifizierung, Ablauf, Gruppe, Medien, Sperren, Fehler');
