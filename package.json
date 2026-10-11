@@ -1,0 +1,1 @@
+{"name":"gruppennetzwerk-kontakt","private":true,"type":"module","scripts":{"deploy":"tgcloud push","status":"tgcloud status"},"devDependencies":{"@tgcloud/cli":"^0.2.0"}}
