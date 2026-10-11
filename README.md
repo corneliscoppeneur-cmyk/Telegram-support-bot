@@ -81,6 +81,10 @@ Die Tests simulieren SDK und Datenbank. Die persönliche Installation des Projek
 - Ein Zahlungsmodul ist nicht enthalten.
 - Tokens gehören weder in das Repository noch in Logs. Lokale Zugangsdaten und `node_modules` sind über `.gitignore` ausgeschlossen.
 
+### Weitere Bots bauen
+
+Eine Anleitung für ein gemeinsames ChatGPT-Work-Projekt, getrennte Bot-Projekte und wiederverwendbare KI-Anweisungen steht in [docs/WEITERE-BOTS-DE.md](docs/WEITERE-BOTS-DE.md).
+
 ### Herkunft und Nutzungsrechte
 
 Die Portierung basiert auf [moeacgx/Telegram-SuperGM](https://github.com/moeacgx/Telegram-SuperGM). Im geprüften Stand des Ausgangsrepositorys war keine Lizenzdatei vorhanden. Dieses Paket vergibt deshalb keine zusätzliche Lizenz für den abgeleiteten Code. Die Rechte zur öffentlichen oder kostenpflichtigen Weitergabe müssen mit dem ursprünglichen Rechteinhaber geklärt sein.
@@ -163,6 +167,10 @@ These tests simulate the SDK and database. The project initiator's personal depl
 - Costs and quotas depend on the current Telegram Serverless terms.
 - No payment module is included.
 - Never commit tokens or include them in logs. Local credentials and `node_modules` are excluded by `.gitignore`.
+
+### Building more bots
+
+See [docs/WEITERE-BOTS-DE.md](docs/WEITERE-BOTS-DE.md) for the German guide to organizing multiple bots in ChatGPT Work, keeping deployments separate, and reusing AI instructions.
 
 ### Attribution and usage rights
 
